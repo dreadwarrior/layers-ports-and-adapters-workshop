@@ -23,11 +23,12 @@ final class MeetupRepositoryTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function it_persists_and_retrieves_meetups(): void
+    public function it_persists_and_retrieves_meetups()
     {
         $originalMeetup = MeetupFactory::someMeetup();
         $this->repository->add($originalMeetup);
 
+        $this->assertInternalType('int', $originalMeetup->id());
         $this->assertGreaterThanOrEqual(1, $originalMeetup->id());
 
         $restoredMeetup = $this->repository->byId($originalMeetup->id());
@@ -38,7 +39,7 @@ final class MeetupRepositoryTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function its_initial_state_is_valid(): void
+    public function its_initial_state_is_valid()
     {
         $this->assertSame(
             [],
@@ -49,7 +50,7 @@ final class MeetupRepositoryTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function it_lists_upcoming_meetups(): void
+    public function it_lists_upcoming_meetups()
     {
         $now = new \DateTimeImmutable();
         $pastMeetup = MeetupFactory::pastMeetup();
@@ -68,7 +69,7 @@ final class MeetupRepositoryTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function it_lists_past_meetups(): void
+    public function it_lists_past_meetups()
     {
         $now = new \DateTimeImmutable();
         $pastMeetup = MeetupFactory::pastMeetup();
@@ -87,7 +88,7 @@ final class MeetupRepositoryTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function it_can_delete_all_meetups(): void
+    public function it_can_delete_all_meetups()
     {
         $meetup = MeetupFactory::upcomingMeetup();
         $this->repository->add($meetup);

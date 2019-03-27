@@ -8,7 +8,7 @@ final class NameTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function it_wraps_a_string(): void
+    public function it_wraps_a_string()
     {
         $nameText = 'Non-empty string';
         $name = Name::fromString($nameText);
@@ -18,7 +18,7 @@ final class NameTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function it_should_be_a_non_empty_string(): void
+    public function it_should_be_a_non_empty_string()
     {
         $this->expectException(\InvalidArgumentException::class);
         Name::fromString('');
