@@ -5,7 +5,7 @@ namespace MeetupOrganizing\Entity;
 
 final class ScheduledDate
 {
-    const DATE_TIME_FORMAT = \DateTime::ATOM;
+    private const DATE_TIME_FORMAT = \DateTime::ATOM;
 
     /**
      * @var string
