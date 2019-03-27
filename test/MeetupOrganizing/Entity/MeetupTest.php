@@ -1,7 +1,12 @@
 <?php
 declare(strict_types = 1);
 
-namespace MeetupOrganizing\Entity;
+namespace Tests\MeetupOrganizing\Entity;
+
+use MeetupOrganizing\Entity\Meetup;
+use MeetupOrganizing\Entity\Name;
+use MeetupOrganizing\Entity\Description;
+use MeetupOrganizing\Entity\ScheduledDate;
 
 final class MeetupTest extends \PHPUnit_Framework_TestCase
 {
